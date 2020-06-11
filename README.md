@@ -1,2 +1,5 @@
-# covid-visualizations
-Extended visualizations of Covid-19 cases in R Shiny
+## Visualization of Covid-19 in R Shiny
+
+### Overview
+
+### Instructions
