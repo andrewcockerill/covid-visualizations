@@ -16,7 +16,7 @@ In this way, one can ideally obtain a quick reference to a region's current stat
 
 - Navigate to and open <tt>app.R</tt>
 
-- Execute the appplication by clicking "Run App> on the top right section of the window
+- Execute the appplication by clicking "Run App" on the top right section of the window
 
 #### Running from shinyapps.io
 
