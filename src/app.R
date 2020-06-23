@@ -78,7 +78,8 @@ format_us_data <- function(raw_list, input_name){
     mutate(value_prop = value/population*100000, value_rate_ma_prop = value_rate_ma/population*100000) %>%
     ungroup() %>%
     group_by(region) %>%
-    mutate(value_rate_ma_prop_accel = (value_rate_ma_prop - lag(value_rate_ma_prop, n=7, default=NA)) / 7)
+    mutate(value_rate_ma_prop_accel = (value_rate_ma_prop - lag(value_rate_ma_prop, n=7, default=NA)) / 7) %>%
+    filter(!is.na(dt))
   
   # Variable names
   names(out_df) <- gsub("value", feature, names(out_df))
@@ -126,7 +127,8 @@ format_global_data <- function(raw_list, input_name){
     mutate(value_prop = value/population*100000, value_rate_ma_prop = value_rate_ma/population*100000) %>%
     ungroup() %>%
     group_by(region) %>%
-    mutate(value_rate_ma_prop_accel = (value_rate_ma_prop - lag(value_rate_ma_prop, n=7, default=NA)) / 7)
+    mutate(value_rate_ma_prop_accel = (value_rate_ma_prop - lag(value_rate_ma_prop, n=7, default=NA)) / 7) %>%
+    filter(!is.na(dt))
   
   # Variable names
   names(out_df) <- gsub("value", feature, names(out_df))
@@ -229,7 +231,10 @@ us_sortings <- c("A-Z", "Case Rate (per 100k)","Case Acceleration (per 100k)")
 ui <- fluidPage(
   titlePanel("Covid-19 World/US Visualizations"),
   
-  h3("test"),
+  HTML("Shiny app built by <a href='https://github.com/lcfooj/covid-visualizations' target='_blank'>lcfooj</a>. Data provided by 
+     <a href='https://coronavirus.jhu.edu/map.html' target='_blank'>COVID-19 Dashboard by the Center for Systems Science and Engineering (CSSE) at 
+     Johns Hopkins University</a>. Visualization methodology inspired by 
+     <a href='https://aatishb.com/covidtrends/' target='_blank'>Covid Trends</a> dashboard by Aatish Bhatia."),
   
   tabsetPanel(
     
