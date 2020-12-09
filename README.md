@@ -18,6 +18,6 @@ In this way, one can ideally obtain a quick reference to a region's current stat
 
 - Execute the appplication by clicking "Run App" on the top right section of the window
 
-#### Running from shinyapps.io
+#### Screenshot
 
-- NYI
+![alt text](screenshots/dashboard_screenshot.png "Dashboard example")
